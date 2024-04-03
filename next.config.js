@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         source: "/deploy",
-        destination: "https://open-ai-assistant-api-chat.vercel.app",
+        destination: "./",
         permanent: true,
       },
     ];

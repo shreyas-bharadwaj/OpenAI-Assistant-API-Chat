@@ -243,15 +243,13 @@ async sendMessage(input: string, files: File[], fileDetails: any[]): Promise<voi
       console.log('File IDs during Chat:', ChatFileIds);
       // Submit the user's message
       await submitUserMessage(input, this.state.threadId, this.state.setStatusMessage, ChatFileIds); // Pass the file IDs here
-      console.log('User message submitted. Running assistant...');
+      ('User message submitted. Running assistant...');
       
       // Run the assistant
       this.state.runId = await runChatAssistant(this.state.assistantId as string, this.state.threadId as string);
-      console.log('Assistant run successfully. Fetching assistant response...');
       
       // Fetch the assistant's response
       const response = await fetchAssistantResponse(this.state.runId as string, this.state.threadId as string, this.state.setStatusMessage, this.state.setProgress,0);
-      console.log('Assistant response fetched. Adding to chat state...');
       
       
       // Add the assistant's response to the messages
@@ -275,7 +273,6 @@ async sendMessage(input: string, files: File[], fileDetails: any[]): Promise<voi
 
   // Method to get the current chat state
   getChatState(): ChatState {
-    console.log('Getting chat state');
     return this.state;
   }
 }
